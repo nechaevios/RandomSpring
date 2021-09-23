@@ -13,32 +13,30 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var runButtonLabel: SpringButton!
     
-    @IBOutlet weak var animationNameLabel: UILabel!
-    @IBOutlet weak var animationCurveLabel: UILabel!
-    @IBOutlet weak var animationForceLabel: UILabel!
-    @IBOutlet weak var animationDurationLabel: UILabel!
+    @IBOutlet var animationData: [UILabel]!
     
     private let animations = Animation.getAnimationList()
-    private var nextAnimationIndex = 0
+    private var randomIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextAnimationIndex = getRandomIndex()
-        updateLabels()
+        
+        randomIndex = getRandomIndex()
+        setRandomAnimation()
         
     }
-  
+    
     @IBAction func runSpringAnimation(_ sender: SpringButton) {
-        updateLabels()
-        setAnimationSettings()
+        setRandomAnimation()
         springAnimationView.animate()
         
         sender.animation = "pop"
         sender.force = 0.3
         sender.animate()
         
-        nextAnimationIndex = getRandomIndex()
-        updateButtonTitle()
+        randomIndex = getRandomIndex()
+        setRandomAnimation()
+        setButtonText()
         
     }
     
@@ -47,24 +45,30 @@ class MainViewController: UIViewController {
         
     }
     
-    private func setAnimationSettings() {
-        springAnimationView.animation = animations[nextAnimationIndex].animationName
-        springAnimationView.curve = animations[nextAnimationIndex].animationCurve
-        springAnimationView.force = CGFloat(animations[nextAnimationIndex].animationForce)
-        springAnimationView.duration = CGFloat(animations[nextAnimationIndex].animationDuration)
+    
+    private func setRandomAnimation() {
+        let randomAnimation = animations[randomIndex]
+        
+        springAnimationView.animation = randomAnimation.animationName
+        springAnimationView.curve = randomAnimation.animationCurve
+        springAnimationView.force = CGFloat(randomAnimation.animationForce)
+        springAnimationView.duration = CGFloat(randomAnimation.animationDuration)
+        
+        setLabelsText(with: randomAnimation)
+                
+    }
+    
+    private func setLabelsText(with animation: Animation) {
+        animationData[0].text = animation.animationName
+        animationData[1].text = animation.animationCurve
+        animationData[2].text = String(animation.animationForce)
+        animationData[3].text = String(animation.animationDuration)
         
     }
     
-    private func updateLabels() {
-        animationNameLabel.text = animations[nextAnimationIndex].animationName
-        animationCurveLabel.text = animations[nextAnimationIndex].animationCurve
-        animationForceLabel.text = String(animations[nextAnimationIndex].animationForce)
-        animationDurationLabel.text = String(animations[nextAnimationIndex].animationDuration)
-        
-    }
-    
-    private func updateButtonTitle() {
-        runButtonLabel.setTitle("Run next animation: \(animations[nextAnimationIndex].animationName)" , for: .normal)
+    private func setButtonText() {
+        let randomAnimation = animations[randomIndex]
+        runButtonLabel.setTitle("Run next animation: \(randomAnimation.animationName)" , for: .normal)
         
     }
     
