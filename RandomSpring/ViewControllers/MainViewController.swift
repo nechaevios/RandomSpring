@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var animationForceLabel: UILabel!
     @IBOutlet weak var animationDurationLabel: UILabel!
     
-    private let animations = Animation.getAnimations()
+    private let animations = Animation.getAnimationList()
     private var nextAnimationIndex = 0
     
     override func viewDidLoad() {

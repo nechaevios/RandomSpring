@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g01-io-wAg" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="91" y="397.5" width="138.5" height="35.5"/>
+                                <rect key="frame" x="70" y="397.5" width="180" height="35.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Run animation">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
@@ -138,8 +138,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g01-io-wAg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1yK-FG-yz8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gtb-7m-wod" secondAttribute="trailing" constant="30" id="A1K-RQ-KOL"/>
+                            <constraint firstItem="g01-io-wAg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="DaA-2r-As7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g01-io-wAg" secondAttribute="trailing" constant="70" id="IDD-TW-wDz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g01-io-wAg" secondAttribute="bottom" constant="135" id="Tdo-BQ-UEe"/>
                             <constraint firstItem="Gtb-7m-wod" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="ai6-5r-0pw"/>
                             <constraint firstItem="Gtb-7m-wod" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="z6G-Ok-l3b"/>

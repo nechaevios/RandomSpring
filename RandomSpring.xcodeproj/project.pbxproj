@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10737A33E7E7E3E336B62595 /* Pods_RandomSpring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A455A30FB040D90C6C83639 /* Pods_RandomSpring.framework */; };
+		D812826126FC7225006D7B69 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D812826026FC7225006D7B69 /* DataManager.swift */; };
 		D81AAF1926FB205600DA2AF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81AAF1826FB205600DA2AF1 /* MainViewController.swift */; };
 		D81AAF1D26FB24AE00DA2AF1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81AAF1C26FB24AE00DA2AF1 /* Animation.swift */; };
 		D859711C26FB1B1C00BE6365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D859711B26FB1B1C00BE6365 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 		3A455A30FB040D90C6C83639 /* Pods_RandomSpring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomSpring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C90E04F1CA2B9163F8DC87A /* Pods-RandomSpring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomSpring.debug.xcconfig"; path = "Target Support Files/Pods-RandomSpring/Pods-RandomSpring.debug.xcconfig"; sourceTree = "<group>"; };
 		C62104C0D62029DEFF679A3D /* Pods-RandomSpring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomSpring.release.xcconfig"; path = "Target Support Files/Pods-RandomSpring/Pods-RandomSpring.release.xcconfig"; sourceTree = "<group>"; };
+		D812826026FC7225006D7B69 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D81AAF1826FB205600DA2AF1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D81AAF1C26FB24AE00DA2AF1 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		D859711826FB1B1C00BE6365 /* RandomSpring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomSpring.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D812826226FC722B006D7B69 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D812826026FC7225006D7B69 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D81AAF1E26FB24F300DA2AF1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 				D859713126FB1C2500BE6365 /* StoryBoards */,
 				D859713026FB1C0C00BE6365 /* Resources */,
 				D81AAF1E26FB24F300DA2AF1 /* Models */,
+				D812826226FC722B006D7B69 /* Services */,
 			);
 			path = RandomSpring;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D859711C26FB1B1C00BE6365 /* AppDelegate.swift in Sources */,
+				D812826126FC7225006D7B69 /* DataManager.swift in Sources */,
 				D859711E26FB1B1C00BE6365 /* SceneDelegate.swift in Sources */,
 				D81AAF1D26FB24AE00DA2AF1 /* Animation.swift in Sources */,
 				D81AAF1926FB205600DA2AF1 /* MainViewController.swift in Sources */,

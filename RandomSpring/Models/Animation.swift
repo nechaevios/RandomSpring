@@ -13,57 +13,32 @@ struct Animation {
     let animationForce: Float
     let animationDuration: Float
     
-    static func getAnimations() -> [Animation] {
-        [
-            Animation(
-                animationName: "wobble",
-                animationCurve: "spring",
-                animationForce: 0.7,
-                animationDuration: 1.3
-            ),
-            Animation(
-                animationName: "wobble",
-                animationCurve: "linear",
-                animationForce: 0.2,
-                animationDuration: 1
-            ),
-            Animation(
-                animationName: "flipY",
-                animationCurve: "easeInOutExpo",
-                animationForce: 1.2,
-                animationDuration: 1
-            ),
-            Animation(
-                animationName: "squeeze",
-                animationCurve: "easeInOut",
-                animationForce: 0.5,
-                animationDuration: 0.9
-            ),
-            Animation(
-                animationName: "swing",
-                animationCurve: "easeInOutBack",
-                animationForce: 1.1,
-                animationDuration: 0.8
-            ),
-            Animation(
-                animationName: "shake",
-                animationCurve: "easeInCubic",
-                animationForce: 0.4,
-                animationDuration: 0.9
-            ),
-            Animation(
-                animationName: "flipX",
-                animationCurve: "easeOutQuint",
-                animationForce: 1,
-                animationDuration: 1
-            ),
-            Animation(
-                animationName: "morph",
-                animationCurve: "easeOutQuad",
-                animationForce: 0.2,
-                animationDuration: 0.8
+}
+
+extension Animation {
+    static func getAnimationList() -> [Animation] {
+        
+        var animations: [Animation] = []
+        
+        let animationNames = DataManager.shared.animationNames.shuffled()
+        let curves = DataManager.shared.curves.shuffled()
+        let forceValues = DataManager.shared.forceValues.shuffled()
+        let durationValues = DataManager.shared.durationValues.shuffled()
+        
+        let iterationCount = min(animationNames.count, curves.count, forceValues.count, durationValues.count)
+        
+        for index in 0..<iterationCount {
+            let animation = Animation(
+                animationName: animationNames[index],
+                animationCurve: curves[index],
+                animationForce: forceValues[index],
+                animationDuration: durationValues[index]
             )
             
-        ]
+            animations.append(animation)
+        }
+        
+        return animations
     }
+    
 }
